@@ -532,9 +532,56 @@ footer ul a:hover{
 =========================================SIGN IN============================================================
 =========================================================================*/
 
-
-.sign-in-form{
+.search{
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(auto-fit, minmax());
+    grid-template-columns: auto auto;
+    width: 70%;
+    background-color: var(--color-primary);
+}
+  
+  .search input[type=text] {
+    font-size: 17px;
+    border: none;
+    opacity: 1;
+    width: 100%;
+  }
+  
+  .search button {
+    float: right;
+    background: var(--color-primary);
+    font-size: 17px;
+    opacity: 1;
+    cursor: pointer;
+  }
+  
+  .search .search-container button:hover {
+    background: var(--color-primary);
+  }
+  
+@media screen and (max-width: 600px) {
+.search input[type=text]{
+      display: block;
+      text-align: left;
+      margin: 0;
+      padding: 4.5%;
+      opacity: 1;
+ }
+
+
+}
+
+  .search button{
+    padding: 5.4%;
+    margin: 0;
+    border-radius: 0% 10px 10px 0px;
+    opacity: 1;
+    width: 50%;
+    background-color: yellowgreen;
+  }
+
+.search-box{
+    padding: 1%;
+    background-color: var(--color-primary);
+    opacity: 0.9;
+    border-radius: 10px;
 }
