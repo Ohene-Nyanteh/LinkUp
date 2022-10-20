@@ -40,10 +40,10 @@
 
 
 /* ===================== QUERIES ==========================*/
-@media only screen and (max-width: 1024px) {
-    main{
+@media only screen and (min-width: 1024px) {
+    /* main{
         padding-top: 15%;
-    }
+    } */
 
     nav button{
        display: inline-block;
@@ -67,6 +67,10 @@
         flex-direction: column;
         top: 1;
     }
+
+    .search-box{
+        margin-top: 3rem;
+    }
 }
 
 /* For mobile screens*/
@@ -82,11 +86,15 @@
     }
     
     main{
-        padding-top: 20rem;
+        padding-top: 50%;
     }
 
     aside{
         display: none;
+    }
+
+    .search-box{
+        margin-top: 2%;
     }
 }
 
@@ -103,7 +111,35 @@
         display: none;
     }
 
+    .search-box{
+        margin-top: 6rem;
+    }
+    main{
+        padding-top: 20%;
+    }
+
 }
+
+@media only screen and (max-width: 924px) {
+    .container{
+          margin-inline: 0% 0%;
+    }
+
+    aside{
+        display: grid;
+        display: none;
+    }
+
+    .search-box{
+        margin-top: 6rem;
+    }
+
+    main{
+        padding-top: 6rem;
+    }
+
+}
+
 
 
 /*==================================== Styles===========================*/
@@ -266,11 +302,18 @@ nav button{
     padding: 0;
 }
 
+.avatar_4{
+    border-radius: 50%;
+    display: flexbox;
+    float: left;
+    margin-right: 2%;
+    padding: 0;
+}
 
 /*===================================DROP DOWN========================================================*/
 .dropdown {
     overflow: hidden;
-    display: inline-block;
+    display: none;
 }
   
 .dropdown .dropbtn {
@@ -286,12 +329,12 @@ nav button{
   
 .dropdown-content {
     float: left;
-    display: none;
     position: absolute;
     background-color: hsl(240, 100%, 65%);
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    display: none;
 }
   
 .dropdown-content a {
@@ -382,7 +425,6 @@ main{
 
 
 .author-info{
-    grid-column: span 2;
     margin-left: 1%;
     align-items: center;
 }
@@ -392,16 +434,15 @@ main{
 =================================================================================*/
 
 .desc .meta-info-post{
-    display: grid;
+    float: left;
     margin: 2%;
     width: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
     border-radius: 50%;
 }
 
 .desc .meta-info-post .author-info{
-        grid-column: span 2;
         margin-left: 1%;
+        float: left;
         align-items: center;
 }
 
@@ -639,11 +680,9 @@ footer ul a:hover{
 }
 
 .singlepost__container .meta-info-post{
-    display: grid;
+    display: flexbox;
     margin: 2%;
     width: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(, 1fr));
-    border-radius: 50%;
 }
 
 .singlepost__container .meta-info-post .author-info{
