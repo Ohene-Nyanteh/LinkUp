@@ -39,27 +39,7 @@
 }
 
 
-@media only screen and (max-width: 400px) {
-.container{
-      margin-inline: 0% 0%;
-}
-.middle-element{
-    width: 100%;
-    margin-block: 0% 0%;
-}
-
-main{
-    padding-top: 20rem;
-}
-}
-
-
-  @media only screen and (max-width: 600px) {
-.container{
-      margin-inline: 0% 0%;
-}
-}
-
+/* ===================== QUERIES ==========================*/
 @media only screen and (max-width: 1024px) {
     main{
         padding-top: 15%;
@@ -89,6 +69,44 @@ main{
     }
 }
 
+/* For mobile screens*/
+
+@media only screen and (max-width: 400px) {
+    .container{
+          margin-inline: 0% 0%;
+          width: 100%;
+    }
+    .middle-element{
+        width: 100%;
+        margin-block: 0% 0%;
+    }
+    
+    main{
+        padding-top: 20rem;
+    }
+
+    aside{
+        display: none;
+    }
+}
+
+    
+    
+    /* for tablets*/
+@media only screen and (max-width: 600px) {
+    .container{
+          margin-inline: 0% 0%;
+    }
+
+    aside{
+        display: grid;
+        display: none;
+    }
+
+}
+
+
+/*==================================== Styles===========================*/
 body{
     font-family: 'Montserrat', sans-serif;
     color: var(--color-grey-900);
@@ -248,6 +266,7 @@ nav button{
     padding: 0;
 }
 
+
 /*===================================DROP DOWN========================================================*/
 .dropdown {
     overflow: hidden;
@@ -375,8 +394,8 @@ main{
 .desc .meta-info-post{
     display: grid;
     margin: 2%;
-    width: 50%;
-    grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
     border-radius: 50%;
 }
 
@@ -430,7 +449,7 @@ main{
 =========================================ASIDE==================================
 =================================================================================*/
 aside{
-    display: grid;
+    /* display: grid; */
     width: 100%;
     border-top: 2px solid var(--color-primary);
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -498,7 +517,7 @@ footer{
 
 .footer__container{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     background-color: var(--color-primary);
 }
 
@@ -534,20 +553,21 @@ footer ul a:hover{
 
 .search{
     display: grid;
-    grid-template-columns: auto auto;
-    width: 70%;
+    grid-template-columns: 500px 100px;
+    width: fit-content;
     background-color: var(--color-primary);
 }
   
   .search input[type=text] {
     font-size: 17px;
     border: none;
-    opacity: 1;
+    background: transparent;
     width: 100%;
+    padding: 2%;
+    border: none;
   }
   
   .search button {
-    float: right;
     background: var(--color-primary);
     font-size: 17px;
     opacity: 1;
@@ -564,8 +584,18 @@ footer ul a:hover{
       text-align: left;
       margin: 0;
       padding: 4.5%;
-      opacity: 1;
+      border: none;
+      background: transparent;
+      width: 100%;
  }
+ 
+.search{
+    display: grid;
+    grid-template-columns: auto 100px;
+    width: 100%;
+    background-color: var(--color-primary);
+}
+
 
 
 }
@@ -575,13 +605,49 @@ footer ul a:hover{
     margin: 0;
     border-radius: 0% 10px 10px 0px;
     opacity: 1;
-    width: 50%;
+    width: 100%;
     background-color: yellowgreen;
   }
 
 .search-box{
-    padding: 1%;
     background-color: var(--color-primary);
     opacity: 0.9;
     border-radius: 10px;
+    width: fit-content;
+}
+
+/*===============================================================================================================================SINGLE POSt===================================================================*/
+.singlepost{
+    margin: 6rem 0 2rem;
+}
+
+.singlepost__container{
+    width: var(--form-width);
+    margin-block: 8rem 2rem;
+    background: var(--color-grey-900);
+    padding: 1rem 2rem 2rem;
+}
+
+.singlepost__container p{
+    line-height: 1.7;
+    color: white;
+}
+
+.singlepost__thumbnail img{
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.singlepost__container .meta-info-post{
+    display: grid;
+    margin: 2%;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(, 1fr));
+    border-radius: 50%;
+}
+
+.singlepost__container .meta-info-post .author-info{
+        grid-column: span 2;
+        margin-left: 1%;
+        align-items: center;
 }
