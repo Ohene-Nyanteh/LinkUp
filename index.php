@@ -22,13 +22,13 @@
 <header>
   <nav class="nav__container" id="header">
     <!--logo-->
-    <a href="blog.html"><img class="logo" src="Images/logo_2.jpg" alt="logo"></a>
+    <a href="blog.php"><img class="logo" src="Images/logo_2.jpg" alt="logo"></a>
     <ul class="Nav-menu">
-        <li class="nav-element"><a href="index.html" id="active">Home</a></li>
-        <li class="nav-element"><a href="Others\about.html">About</a></li>
-        <li class="nav-element"><a href="Others\services.html">Services</a></li>
-        <li class="nav-element"><a href="Others\contact.html">Contact</a></li>
-        <li class="nav-element"><a href="Sign-In and Log-out/sign-in.html">Sign In</a></li>
+        <li class="nav-element"><a href="index.php" id="active">Home</a></li>
+        <li class="nav-element"><a href="Others\about.php">About</a></li>
+        <li class="nav-element"><a href="Others\services.php">Services</a></li>
+        <li class="nav-element"><a href="Others\contact.php">Contact</a></li>
+        <li class="nav-element"><a href="Sign-In and Log-out/sign-in.php">Sign In</a></li>
         <li class="undropdown">
             <a href="#"><img class="avatar" src="Images/pic10.jpg" width="40" height="40"></a>
               <i class="fa fa-caret-down"></i>

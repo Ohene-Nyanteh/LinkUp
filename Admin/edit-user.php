@@ -37,7 +37,7 @@
 
     <section class="form__section">
         <div class="form__section-container">
-            <h2>Add User</h2>
+            <h2>Edit User</h2>
             <div class="alert__message sucess">
                 <p>This is an Sucess message</p>
             </div>
