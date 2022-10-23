@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Sign Up | LinkUp.com</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="../Style and Scripts\style.css">
+    <link rel="stylesheet" href="Style and Scripts\style.css">
     <link rel="stylesheet" href="../Style and Scripts\Resposnsive-style.css">
     <!--======================FONTS=======================-->
     <link rel="preconnect" href="https://fonts.googleapis.com">

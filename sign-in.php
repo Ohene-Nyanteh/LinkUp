@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="../Style and Scripts\style.css">
+    <link rel="stylesheet" href="Style and Scripts\style.css">
     <link rel="stylesheet" href="../Style and Scripts\Resposnsive-style.css">
     <!--======================FONTS=======================-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +28,7 @@
                 <input type="password" placeholder="Create Password">
                 <input type="password" placeholder="Confirm password">
                 <button type="submit" class="form-button">Sign In</button>
-                <small>Don't have an account? <a href="sign-in.html">Sign up</a></small>
+                <small>Don't have an account? <a href="sign-up.php">Sign up</a></small>
             </form>        
         </div>
     </section>

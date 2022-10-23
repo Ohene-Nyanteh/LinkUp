@@ -1,5 +1,5 @@
 <?php
-require 'Config/database.php';
+require '../Config/database.php';
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +26,7 @@ require 'Config/database.php';
 <header>
   <nav class="nav__container" id="header">
     <!--logo-->
-    <a href="<?= ROOT_URL?>"><img class="logo" src="Images/logo_2.jpg" alt="logo"></a>
+    <a href="<?= ROOT_URL?>"><h2>LinkUp</h2></a>
     <ul class="Nav-menu">
         <li class="nav-element"><a href="<?= ROOT_URL?>index.php" id="active">Home</a></li>
         <li class="nav-element"><a href="<?= ROOT_URL?>about.php">About</a></li>
