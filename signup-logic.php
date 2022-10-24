@@ -105,7 +105,10 @@ if(isset($_POST['submit'])){
         die();
     }
     else{
-        $inset_user_query= "INSERT INTO users (firstname, lastname, username, email, password, avatar, is_admin) VALUES('$firstname', '$lastname', '$username', '$email', '$hashed_password', '$avatar_name', 0)";
+        $insert_user_query= "INSERT INTO users (firstname, lastname, username, email, password, avatar, is_admin) VALUES('$firstname', '$lastname', '$username', '$email', '$hashed_password', '$avatar_name', 0)";
+
+        $insert_user_results = mysqli_query($connection, $insert_user_query);
+
 
         if(!mysqli_errno($connection)){
             // redirect to login page with sucess message
