@@ -4,6 +4,7 @@ session_start();
 require 'Config/Database.php';
 
 
+
 // get sign in page if the sign up button was clicked.
 
 if(isset($_POST['submit'])){
@@ -100,7 +101,7 @@ if(isset($_POST['submit'])){
     //redirect back to sign up page if there was any problem
     if(isset($_SESSION['signup'])){
         //pass form data back to 
-        header('location: '. ROOT_URL . 'signup.php');
+        header('location: '. ROOT_URL . 'sign-up.php');
         die();
     }
     else{

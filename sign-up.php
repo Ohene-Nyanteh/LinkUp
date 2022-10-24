@@ -1,6 +1,17 @@
 <?php 
 session_start();
-require "Config/constants.php"
+require "Config/constants.php";
+
+// get back info if there is registration error
+$firstname = $_SESSION['signup-data']['firstname'] ?? null;
+$lastname = $_SESSION['signup-data']['lastname'] ?? null;
+$username = $_SESSION['signup-data']['username'] ?? null;
+$email = $_SESSION['signup-data']['email'] ?? null;
+$createpassword = $_SESSION['signup-data']['createpassword'] ?? null;
+$confirmpassword = $_SESSION['signup-data']['confirmpassword'] ?? null;
+
+//delete signup data session
+unset($_SESSION['signup-data']);
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +20,7 @@ require "Config/constants.php"
     <meta charset="UTF-8">
     <title>Sign Up | LinkUp.com</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="Style and Scripts\style.css">
+    <link rel="stylesheet" href="<?= ROOT_URL?>Style and Scripts\style.css">
     <link rel="stylesheet" href="../Style and Scripts\Resposnsive-style.css">
     <!--======================FONTS=======================-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,13 +47,17 @@ require "Config/constants.php"
             <?php endif ?>
             
             <form action="<?=ROOT_URL ?>signup-logic.php" method="post" enctype="multipart/form-data">
-                <input type="text" name="firstname" placeholder="First Name" >
-                <input type="text" name="lastname" placeholder="Last Name">
-                <input type="text" name="username" placeholder="Username">
-                <input type="email" name="email" placeholder="Email">
-                <input type="password" name="createpassword" placeholder="Create Password">
+                <input type="text" name="firstname" value="<?=$firstname?>" placeholder="First Name" >
+                <input type="text" 
+                value="<?=$lastname?>" name="lastname" placeholder="Last Name">
+                <input type="text" name="username" value="<?=$username?>" placeholder="Username">
+                <input type="email" 
+                value="<?=$email?>" name="email" placeholder="Email">
+                <input type="password" name="createpassword" 
+                value="<?=$createpassword?>" placeholder="Create Password">
                 <input type="password" 
-                name="confirmpassword" placeholder="Confirm password">
+                name="confirmpassword"
+                value="<?=$confirmpassword?>"  placeholder="Confirm password">
                 <div class="form__control">
                     <label for="avatar" class="user_avatar">User Avatar</label>
                     <input type="file" name="avatar" id="avatar">
