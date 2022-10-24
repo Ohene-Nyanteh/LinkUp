@@ -1,3 +1,7 @@
+<?php 
+require "Config/constants.php"
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +26,7 @@
             <div class="alert__message error">
                 <p>This is an Error message</p>
             </div>
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="<?=ROOT_URL ?>signup-logic.php" method="post" enctype="multipart/form-data">
                 <input type="text" placeholder="First Name">
                 <input type="text" placeholder="Last Name">
                 <input type="text" placeholder="Username">
@@ -34,7 +38,7 @@
                     <input type="file" id="avatar">
                 </div>
                 <button type="submit" class="form-button">Sign Up</button>
-                <small>Already have an account? <a href="sign-in.html">Sign In</a></small>
+                <small>Already have an account? <a href="sign-in.php">Sign In</a></small>
             </form>        
         </div>
     </section>

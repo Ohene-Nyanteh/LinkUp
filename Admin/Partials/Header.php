@@ -1,5 +1,5 @@
 <?php
-require '../Config/Database.php';
+require 'Config\Database.php';
 ?>
 
 <!DOCTYPE html>

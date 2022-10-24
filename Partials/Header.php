@@ -1,5 +1,5 @@
 <?php
-require '../Config/database.php';
+require 'Config/database.php';
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +39,6 @@ require '../Config/database.php';
             <div class="dropdown-content">
               <a href="<?= ROOT_URL?>Admin/dashboard.php">Dashboard</a>
               <a href="#">Log Out</a>
-
             </div>
         </li>
     </ul>
