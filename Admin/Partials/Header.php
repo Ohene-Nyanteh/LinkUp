@@ -1,5 +1,18 @@
 <?php
-require 'Config\Database.php';
+require 'Config/Database.php';
+
+// check login status
+if(!isset($_SESSION['user-id'])){
+  header('location: '. ROOT_URL. 'sign-in.php');
+  die();
+}
+//fetch current user from database
+elseif(isset($_SESSION['user-id'])){
+  $id = filter_var($_SESSION['user-id'], FILTER_SANITIZE_NUMBER_INT);
+  $query = "SELECT avatar FROM users WHERE id=$id";
+  $result= mysqli_query($connection, $query);
+  $avatar = mysqli_fetch_assoc($result);
+}
 ?>
 
 <!DOCTYPE html>
@@ -32,15 +45,20 @@ require 'Config\Database.php';
         <li class="nav-element"><a href="<?= ROOT_URL?>about.php">About</a></li>
         <li class="nav-element"><a href="<?= ROOT_URL?>services.php">Services</a></li>
         <li class="nav-element"><a href="<?= ROOT_URL?>contact.php">Contact</a></li>
-        <li class="nav-element"><a href="<?= ROOT_URL?>sign-in.php">Sign In</a></li>
-        <li class="undropdown">
-            <a href="#"><img class="avatar" src="" width="40" height="40"></a>
+        <?php if(isset($_SESSION['user-id'])) : ?>
+        <li class="dropdown">
+          <div class="div-avatar_5">
+          <img class="avatar_5" src="<?= ROOT_URL. 'Images/'. $avatar['avatar']?>" width="40" height="40">
               <i class="fa fa-caret-down"></i>
+          </div>
             <div class="dropdown-content">
               <a href="<?= ROOT_URL?>Admin/index.php">Dashboard</a>
-              <a href="#">Log Out</a>
+              <a href="<?= ROOT_URL?>logout.php">Log Out</a>
             </div>
         </li>
+        <?php else :?>
+          <li class="nav-element"><a href="<?= ROOT_URL?>sign-in.php">Sign In</a></li>
+        <?php endif?>
     </ul>
   </nav>
 </header>

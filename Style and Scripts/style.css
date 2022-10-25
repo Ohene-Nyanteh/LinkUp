@@ -177,6 +177,12 @@
         margin-inline: auto;
     }
 
+    .form__section-container.extra{
+        width: var(--form-width);
+        margin-inline: auto;
+        margin-block: 10vh;
+        height: fit-content;
+    }
     .search-box{
         margin-top: 3rem;
     }
@@ -706,33 +712,27 @@ header{
     border-bottom: 2px solid var(--color-primary-light);
 }
 
-nav button{
+/* nav button{
     display: none;
-}
+} */
 
 #active{
     border-bottom: 2px solid yellowgreen;
-}
-
-.avatar{
-    background-color: var(--color-primary);
-    border-radius: 50%;
-    padding: 0;
-    /* float: left; */
-    display: none;
 }
 
 .avatar_3{
     background-color: var(--color-primary);
     border-radius: 50%;
     padding: 0;
+    border: 2px solid yellowgreen;
     /* float: left; */
 }
 
 .avatar_2{
     border-radius: 50%;
     grid-column: 1/3;
-    padding: 0;
+    padding: 5px;
+    border: 2px solid yellowgreen;
 }
 
 .avatar_4{
@@ -741,6 +741,18 @@ nav button{
     float: left;
     margin-right: 2%;
     padding: 0;
+    border: 2px solid yellowgreen;
+}
+
+
+.div-avatar_5{
+    margin-top: 1rem;
+    width: fit-content;
+    height: fit-content;
+}
+.avatar_5{
+    border-radius: 50%;
+    border: 3px solid yellowgreen;
 }
 
 /*===================================DROP DOWN========================================================*/

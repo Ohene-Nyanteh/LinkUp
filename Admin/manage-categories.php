@@ -1,5 +1,5 @@
 <?php
-include ('Partials/Header.php');
+include ('../Admin/Partials/Header.php');
 ?>
     <!--====================================End of Nav=======================-->
     
@@ -18,6 +18,12 @@ include ('Partials/Header.php');
                         <li>
                           <a href="index.php"><i class="uil uil-align-left"></i><h5>Manage Post</h5></a>
                         </li>
+                        <?php 
+                        if(isset($_SESSION['user_is_admin'])): ?>
+
+
+
+
                         <li>
                             <a href="add-user.php"><i class="uil uil-user-plus"></i><h5>Add User</h5></a>
                         </li>
@@ -30,6 +36,7 @@ include ('Partials/Header.php');
                         <li>
                             <a href="manage-categories.php" class="active"><i class="uil uil-apps"></i><h5>Manage Categories</h5></a>
                         </li>
+                        <?php endif?>
                  </ul>
 
 
