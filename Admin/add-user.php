@@ -1,6 +1,5 @@
 <?php
 include('Partials/Header.php');
-session_start();
 $firstname = $_SESSION['add-user-data']['firstname'] ?? null;
 $lastname = $_SESSION['add-user-data']['lastname'] ?? null;
 $username = $_SESSION['add-user-data']['username'] ?? null;

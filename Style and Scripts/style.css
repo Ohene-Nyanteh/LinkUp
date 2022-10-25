@@ -86,7 +86,9 @@
     }
     
     .dashboard{
-        margin-top: 3rem; }
+        margin-top: 3rem; 
+        height: auto;
+    }
     
     .dashboard__container{
         display: grid;
@@ -94,6 +96,8 @@
         gap: 1rem;
         background-color: var(--color-grey-900);
         padding: 2rem;
+        width: 90%;
+        height: auto;
         margin-bottom: 5rem;
     }
     

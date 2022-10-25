@@ -30,6 +30,16 @@ $users = mysqli_query($connection, $query);
             <?= $_SESSION['edit-user'];
                 unset($_SESSION['edit-user']);?>
         </div>
+        <?php elseif (isset($_SESSION['delete-user'])) : // shows if delete w user was unsucessful?>
+        <div class="alert__message error container">
+            <?= $_SESSION['delete-user'];
+                unset($_SESSION['delete-user']);?>
+        </div>
+        <?php elseif (isset($_SESSION['edit-user-sucess'])) : // shows eidt user was unsucessful?>
+        <div class="alert__message sucess container">
+            <?= $_SESSION['delete-user-sucess'];
+                unset($_SESSION['delete-user']);?>
+        </div>
         <?php endif ?>
 
         <div class="container dashboard__container">
@@ -73,6 +83,7 @@ $users = mysqli_query($connection, $query);
             </div>
             <div class="main">
                 <h2>Manage Users</h2>
+                <?php if(mysqli_num_rows($users)> 0): ?>
                 <table>
                     <thead>
                         <tr>
@@ -99,11 +110,13 @@ $users = mysqli_query($connection, $query);
                         <?php endwhile ?>
                     </tbody>
                 </table>
+                <?php else:?>
+                    <div class="alert__message error"><h3><?= "NO USERS FOUND!"?></h3></div>
+                <?php endif?>
             </div>
         </div>
     </section>
 </section>
-
 
 <!--===============================FOOTER================================-->
 <?php
