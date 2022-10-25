@@ -1,4 +1,5 @@
 <?php
+session_start();
 define('ROOT_URL', 'http://localhost/Personal%20Website/');
 define("DB_HOST", "localhost");
 define("DB_USER", "Ohene");

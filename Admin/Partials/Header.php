@@ -17,7 +17,7 @@ require 'Config\Database.php';
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,400;0,700;0,800;1,100;1,400;1,600;1,900&display=swap" rel="stylesheet">
     <!--ICONS-->
-    <link rel="icon" href="Images/icon.ico" type="image/x-icon">
+    <link rel="icon" href="<?=ROOT_URL?>/icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -26,7 +26,7 @@ require 'Config\Database.php';
 <header>
   <nav class="nav__container" id="header">
     <!--logo-->
-    <a href="<?= ROOT_URL?>"><h2>LinkUp.com</h2></a>
+    <a href="<?= ROOT_URL?>"><img src="<?= ROOT_URL?>logo_2.jpg" class="logo" title="logo" alt="logo"></a>
     <ul class="Nav-menu">
         <li class="nav-element"><a href="<?= ROOT_URL?>index.php" id="active">Home</a></li>
         <li class="nav-element"><a href="<?= ROOT_URL?>about.php">About</a></li>
@@ -34,12 +34,11 @@ require 'Config\Database.php';
         <li class="nav-element"><a href="<?= ROOT_URL?>contact.php">Contact</a></li>
         <li class="nav-element"><a href="<?= ROOT_URL?>sign-in.php">Sign In</a></li>
         <li class="undropdown">
-            <a href="#"><img class="avatar" src="Images/pic10.jpg" width="40" height="40"></a>
+            <a href="#"><img class="avatar" src="" width="40" height="40"></a>
               <i class="fa fa-caret-down"></i>
             <div class="dropdown-content">
               <a href="<?= ROOT_URL?>Admin/index.php">Dashboard</a>
               <a href="#">Log Out</a>
-
             </div>
         </li>
     </ul>

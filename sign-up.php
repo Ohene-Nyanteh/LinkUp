@@ -1,5 +1,4 @@
 <?php 
-session_start();
 require "Config/constants.php";
 
 // get back info if there is registration error
