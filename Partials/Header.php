@@ -36,7 +36,7 @@ if(isset($_SESSION['user-id'])){
     <!--logo-->
     <a href="<?= ROOT_URL?>"><img src="logo_2.jpg" class="logo" title="logo"></a>
     <ul class="Nav-menu">
-        <li class="nav-element"><a href="<?= ROOT_URL?>index.php" id="active">Home</a></li>
+        <li class="nav-element"><a href="<?= ROOT_URL?>blog.php" id="active">blog</a></li>
         <li class="nav-element"><a href="<?= ROOT_URL?>about.php">About</a></li>
         <li class="nav-element"><a href="<?= ROOT_URL?>services.php">Services</a></li>
         <li class="nav-element"><a href="<?= ROOT_URL?>contact.php">Contact</a></li>

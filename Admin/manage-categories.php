@@ -38,6 +38,12 @@ $categories = mysqli_query($connection, $query);
                 <?= $_SESSION['edit-category'];
                 unset($_SESSION['edit-category']); ?>
             </div>
+        <?php elseif (isset($_SESSION['delete-category-sucess'])) : // shows edit user was sucessful
+        ?>
+            <div class="alert__message sucess container">
+                <?= $_SESSION['delete-category-sucess'];
+                unset($_SESSION['delete-category-sucess']); ?>
+            </div>
 
         <?php endif ?>
         <div class="container dashboard__container">

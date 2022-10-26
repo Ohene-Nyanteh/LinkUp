@@ -15,7 +15,7 @@ include 'Partials/Header.php'
             <section class="post_featured">
 
                 <!--======================FEATURED POST_1==========================================-->
-                  <div><img src="Images/pic7.jpg" class="featured-post-image" width="350" height="300"></div>
+                  <div><img src="Images_2/pic7.jpg" class="featured-post-image" width="350" height="300"></div>
                   
                   <!--===============================POST TEXT======================================-->
                 <section class="post-text">
@@ -30,7 +30,7 @@ include 'Partials/Header.php'
                       </a>
                     </span>
                     <div class="meta-info-post">
-                      <a href="#"><img class="avatar_4" src="Images/pic10.jpg" width="40" height="40"></a>
+                      <a href="#"><img class="avatar_4" src="Images_2/pic10.jpg" width="40" height="40"></a>
                       <div class="author-info">
                         <h4><a href="#">Bright Obeng</a></h4>
                         <small><a href="#">28th May,2022</a></small>
@@ -48,8 +48,8 @@ include 'Partials/Header.php'
             <section class="post-grid">
               <!--===================POST 1==============================-->
               <div class="gallery">
-                <a target="_blank" href="Images/pic8.jpg">
-                  <img class="posting" src="Images/pic8.jpg" alt="Cinque Terre" width="600" height="400">
+                <a target="_blank" href="Images_2/pic8.jpg">
+                  <img class="posting" src="Images_2/pic8.jpg" alt="Cinque Terre" width="600" height="400">
                 </a>
                 <section class="category"><h3>Tech</h3></section>
                 <div class="desc">
@@ -61,7 +61,7 @@ include 'Partials/Header.php'
                     </a>
                   </span>
                   <div class="meta-info-post">
-                    <a href="#"><img class="avatar_4" src="Images/pic11.jpg" width="40" height="40"></a>
+                    <a href="#"><img class="avatar_4" src="Images_2/pic11.jpg" width="40" height="40"></a>
                     <div class="author-info">
                       <h4><a href="#">Kupa</a></h4>
                       <small><a href="#">28th May,2022</a></small>
@@ -72,8 +72,8 @@ include 'Partials/Header.php'
 
               <!--============POST 2==============-->
               <div class="gallery">
-                <a target="_blank" href="Images/pic12.jpg">
-                  <img class="posting" src="Images/pic12.jpg" alt="Cinque Terre" width="600" height="400">
+                <a target="_blank" href="Images_2/pic12.jpg">
+                  <img class="posting" src="Images_2/pic12.jpg" alt="Cinque Terre" width="600" height="400">
                 </a>
                 <section class="category"><h3>Education</h3></section>
                 <div class="desc">
@@ -85,7 +85,7 @@ include 'Partials/Header.php'
                     </a>
                   </span>
                   <div class="meta-info-post">
-                    <a href="#"><img class="avatar_4" src="Images/pic13.jpg" width="40" height="40"></a>
+                    <a href="#"><img class="avatar_4" src="Images_2/pic13.jpg" width="40" height="40"></a>
                     <div class="author-info">
                       <h4><a href="#">Obeng</a></h4>
                       <small><a href="#">28th May,2022</a></small>
@@ -96,8 +96,8 @@ include 'Partials/Header.php'
 
               <!--============POST 3==============-->
               <div class="gallery">
-                <a target="_blank" href="Images/pic13.jpg">
-                  <img class="posting" src="Images/pic13.jpg" alt="Cinque Terre" width="600" height="400">
+                <a target="_blank" href="Images_2/pic13.jpg">
+                  <img class="posting" src="Images_2/pic13.jpg" alt="Cinque Terre" width="600" height="400">
                 </a>
                 <section class="category"><h3>Gaming</h3></section>
                 <div class="desc">
@@ -109,7 +109,7 @@ include 'Partials/Header.php'
                       </a>
                     </span>
                     <div class="meta-info-post">
-                      <a href="#"><img class="avatar_4" src="Images/pic12.jpg" width="40" height="40"></a>
+                      <a href="#"><img class="avatar_4" src="Images_2/pic12.jpg" width="40" height="40"></a>
                       <div class="author-info">
                         <h4><a href="#">Christabel</a></h4>
                         <small><a href="#">28th May,2022</a></small>
@@ -118,8 +118,8 @@ include 'Partials/Header.php'
                 </div>
               </div>
               <div class="gallery">
-                <a target="_blank" href="Images/pic11.jpg">
-                  <img class="posting" src="Images/pic11.jpg" alt="Cinque Terre" width="600" height="400">
+                <a target="_blank" href="Images_2/pic11.jpg">
+                  <img class="posting" src="Images_2/pic11.jpg" alt="Cinque Terre" width="600" height="400">
                 </a>
                 <section class="category"><h3>Tech</h3></section>
                 <div class="desc">
@@ -131,7 +131,7 @@ include 'Partials/Header.php'
                     </a>
                   </span>
                   <div class="meta-info-post">
-                    <a href="#"><img class="avatar_4" src="Images/pic12.jpg" width="40" height="40"></a>
+                    <a href="#"><img class="avatar_4" src="Images_2/pic12.jpg" width="40" height="40"></a>
                     <div class="author-info">
                       <h4><a href="#">By: Kennedy</a></h4>
                       <small><a href="#">28th May,2022</a></small>
@@ -142,8 +142,8 @@ include 'Partials/Header.php'
 
               <!--============POST 2==============-->
               <div class="gallery">
-                <a target="_blank" href="Images/pic15.jpg">
-                  <img class="posting" src="Images/pic12.jpg" alt="Cinque Terre" width="600" height="400">
+                <a target="_blank" href="Images_2/pic15.jpg">
+                  <img class="posting" src="Images_2/pic12.jpg" alt="Cinque Terre" width="600" height="400">
                 </a>
                 <section class="category"><h3>Education</h3></section>
                 <div class="desc">
@@ -155,7 +155,7 @@ include 'Partials/Header.php'
                     </a>
                   </span>
                   <div class="meta-info-post">
-                    <a href="#"><img class="avatar_4" src="Images/pic7.jpg" width="40" height="40"></a>
+                    <a href="#"><img class="avatar_4" src="Images_2/pic7.jpg" width="40" height="40"></a>
                     <div class="author-info">
                       <h4><a href="#">By: Isacc</a></h4>
                       <small><a href="#">30th June,2024</a></small>
@@ -166,8 +166,8 @@ include 'Partials/Header.php'
 
               <!--============POST 3==============-->
               <div class="gallery">
-                <a target="_blank" href="Images/pic13.jpg">
-                  <img class="posting" src="Images/pic14.jpg" alt="Cinque Terre" width="600" height="400">
+                <a target="_blank" href="Images_2/pic13.jpg">
+                  <img class="posting" src="Images_2/pic14.jpg" alt="Cinque Terre" width="600" height="400">
                 </a>
                 <section class="category"><h3>Gaming</h3></section>
                 <div class="desc">
@@ -179,7 +179,7 @@ include 'Partials/Header.php'
                       </a>
                     </span>
                     <div class="meta-info-post">
-                      <a href="#"><img class="avatar_4" src="Images/pic8.jpg" width="40" height="40"></a>
+                      <a href="#"><img class="avatar_4" src="Images_2/pic8.jpg" width="40" height="40"></a>
                       <div class="author-info">
                         <h4><a href="#">By: Isacc</a></h4>
                         <small><a href="#">4th June,2023</a></small>
@@ -188,8 +188,8 @@ include 'Partials/Header.php'
                 </div>
               </div>
               <div class="gallery">
-                  <a target="_blank" href="Images/pic13.jpg">
-                    <img class="posting" src="Images/pic14.jpg" alt="Cinque Terre" width="600" height="400">
+                  <a target="_blank" href="Images_2/pic13.jpg">
+                    <img class="posting" src="Images_2/pic14.jpg" alt="Cinque Terre" width="600" height="400">
                   </a>
                   <section class="category"><h3>Gaming</h3></section>
                   <div class="desc">
@@ -201,7 +201,7 @@ include 'Partials/Header.php'
                         </a>
                       </span>
                       <div class="meta-info-post">
-                        <a href="#"><img class="avatar_4" src="Images/pic8.jpg" width="40" height="40"></a>
+                        <a href="#"><img class="avatar_4" src="Images_2/pic8.jpg" width="40" height="40"></a>
                         <div class="author-info">
                           <h4><a href="#">By: Isacc</a></h4>
                         <small><a href="#">29th June,2023</a></small>
@@ -210,8 +210,8 @@ include 'Partials/Header.php'
                   </div>
               </div>
               <div class="gallery">
-                    <a target="_blank" href="Images/pic13.jpg">
-                      <img class="posting" src="Images/pic14.jpg" alt="Cinque Terre" width="600" height="400">
+                    <a target="_blank" href="Images_2/pic13.jpg">
+                      <img class="posting" src="Images_2/pic14.jpg" alt="Cinque Terre" width="600" height="400">
                     </a>
                     <section class="category"><h3>Gaming</h3></section>
                     <div class="desc">
@@ -223,7 +223,7 @@ include 'Partials/Header.php'
                           </a>
                         </span>
                         <div class="meta-info-post">
-                          <a href="#"><img class="avatar_4" src="Images/pic8.jpg" width="40" height="40"></a>
+                          <a href="#"><img class="avatar_4" src="Images_2/pic8.jpg" width="40" height="40"></a>
                           <div class="author-info">
                             <h4><a href="#">By: Odame</a></h4>
                             <small><a href="#">29th June,2023</a></small>
@@ -232,8 +232,8 @@ include 'Partials/Header.php'
                     </div>
               </div>
               <div class="gallery">
-                <a target="_blank" href="Images/pic13.jpg">
-                  <img class="posting" src="Images/pic13.jpg" alt="Cinque Terre" width="600" height="400">
+                <a target="_blank" href="Images_2/pic13.jpg">
+                  <img class="posting" src="Images_2/pic13.jpg" alt="Cinque Terre" width="600" height="400">
                 </a>
                 <section class="category"><h3>Gaming</h3></section>
                 <div class="desc">
@@ -245,7 +245,7 @@ include 'Partials/Header.php'
                       </a>
                     </span>
                     <div class="meta-info-post">
-                      <a href="#"><img class="avatar_4" src="Images/pic12.jpg" width="40" height="40"></a>
+                      <a href="#"><img class="avatar_4" src="Images_2/pic12.jpg" width="40" height="40"></a>
                       <div class="author-info">
                         <h4><a href="#">By: Christabel</a></h4>
                         <small><a href="#">29th June,2023</a></small>
