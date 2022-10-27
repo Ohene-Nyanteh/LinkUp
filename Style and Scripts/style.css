@@ -591,7 +591,7 @@
 /*==================================== Styles===========================*/
 body{
     font-family: 'Montserrat', sans-serif;
-    color: var(--color-grey-900);
+    color: var(--color-white);
     background: hsl(209, 89%, 7%);
     font-size: 0.9rem;
     margin: 0;
@@ -885,6 +885,10 @@ main{
 =========================================GALLERY==================================
 =================================================================================*/
 
+.desc{
+    height: fit-content;
+}
+
 .desc .meta-info-post{
     float: left;
     margin: 2%;
@@ -917,12 +921,13 @@ main{
 .post-grid .gallery{
     margin: 5px;
     /* border: 1px solid #ccc; */
+    height: fit-content;
     float: left;
     width: auto;
 }
 
 .post-grid .gallery:hover {
-    /* border: 1px solid #777; */
+    border: 1px solid #777;
     width: 98%;
 }
 

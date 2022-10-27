@@ -1,7 +1,7 @@
-<?php 
+<?php
 require 'Config/Database.php';
 
-if(isset($_GET['id'])){
+if (isset($_GET['id'])) {
     // fetch post from database
     $id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
 
@@ -10,35 +10,29 @@ if(isset($_GET['id'])){
     $post = mysqli_fetch_assoc($result);
 
     // check number of posts
-    if(mysqli_num_rows($result)==1){
+    if (mysqli_num_rows($result) == 1) {
         $thumbnail_name = $post['thumbnail'];
-        $avatar_path = '../Images/' . $thumbnail_name;
+        $thumbnail_path = '../Images/' . $thumbnail_name;
 
-        //delete image is available
-        if($avatar_path){
-            unlink($avatar_path);
+        //delete image if available
+        if ($thumbnail_path) {
+            unlink($thumbnail_path);
+
+            //delete post from database
+            $delete_post_query = "DELETE FROM posts WHERE id = $id";
+            $delete_post_results = mysqli_query($connection, $delete_post_query);
+            if (mysqli_errno($connection)) {
+                $_SESSION['delete-post'] = "Couldn't delete '{$post['title']}'";
+            } else {
+                $_SESSION['delete-post-sucess'] = "Deleted '{$post['title']}' Sucessfully!";
+            }
         }
     }
 
-//for later
+    //for later
 
 
-
-
-
-//delete post from database
-$delete_post_query = "DELETE FROM posts WHERE id = $id";
-$delete_post_results = mysqli_query($connection, $delete_post_query);
-if(mysqli_errno($connection)){
-    $_SESSION['delete-post'] = "Couldn't delete '{$post['title']}'";
-}
-else{
-    $_SESSION['delete-post-sucess'] = "Deleted'{$post['title']}' Sucessfully!";
-}
 
 }
-header('location: '. ROOT_URL. 'Admin/index.php');
+header('location: ' . ROOT_URL . 'Admin/');
 die();
-?>
-
-

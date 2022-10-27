@@ -1,283 +1,147 @@
 <?php
-include 'Partials/Header.php'
+include 'Partials/Header.php';
+
+//fetch featured post in database
+$featured_query = "SELECT * FROM posts WHERE is_featured=1";
+$featured_result = mysqli_query($connection, $featured_query);
+$featured = mysqli_fetch_assoc($featured_result);
+
+// fetch nine post from table 
+$post_query = "SELECT * FROM posts ORDER BY date_time DESC LIMIT 9";
+$posts = mysqli_query($connection, $post_query);
+
+
+
 ?>
-    
-    <!--========================================================================
+
+<!--========================================================================
   ======================================================Main Page=====================================================
   ===========================================================================================================
   ===============================================================-->
+
 <body>
-    <main class="container">
-      
-      <!--==================================FEATURED==============================================-->
-        <article class="Featured">
-            <h2>FEATURED</h2>
-            <section class="post_featured">
+  <main class="container">
 
-                <!--======================FEATURED POST_1==========================================-->
-                  <div><img src="Images_2/pic7.jpg" class="featured-post-image" width="350" height="300"></div>
-                  
-                  <!--===============================POST TEXT======================================-->
-                <section class="post-text">
-                    <section class="category"><h3>Arts</h3></section>
-                    <h1>Data Science</h1>
-                    <span class="text">
-                      <a href="">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                      dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                      </a>
-                    </span>
-                    <div class="meta-info-post">
-                      <a href="#"><img class="avatar_4" src="Images_2/pic10.jpg" width="40" height="40"></a>
-                      <div class="author-info">
-                        <h4><a href="#">Bright Obeng</a></h4>
-                        <small><a href="#">28th May,2022</a></small>
-                      </div>
-                    </div>
-                  </section>
-              </div>
+    <!--==================================FEATURED==============================================-->
+    <?php if (mysqli_num_rows($featured_result) === 1) : ?>
+      <article class="Featured">
+        <h2>FEATURED</h2>
+        <section class="post_featured">
+
+          <!--======================FEATURED POST_1==========================================-->
+          <div><img src="Images/<?= $featured['thumbnail'] ?>" class="featured-post-image" width="350" height="300"></div>
+
+          <!--===============================POST TEXT======================================-->
+          <section class="post-text">
+            <?php
+            // fetch categorise from categories
+            $category_id = $featured['category_id'];
+            $category_query = "SELECT * FROM categories WHERE id=$category_id";
+            $category_result = mysqli_query($connection, $category_query);
+            $category = mysqli_fetch_assoc($category_result);
+            ?>
+            <section class="category">
+              <h3><a href="<?= ROOT_URL ?>category-post.php?id=<?= $featured['category_id'] ?>"><?= $category['title'] ?></a></h3>
             </section>
-        </article>
-            <!--================================================POST=================================================-->
-          <section class="main-post">
-            <h2>
-                POSTS
-            </h2>
-            <section class="post-grid">
-              <!--===================POST 1==============================-->
-              <div class="gallery">
-                <a target="_blank" href="Images_2/pic8.jpg">
-                  <img class="posting" src="Images_2/pic8.jpg" alt="Cinque Terre" width="600" height="400">
-                </a>
-                <section class="category"><h3>Tech</h3></section>
-                <div class="desc">
-                  <h3>Data Science</h3>
-                  <span class="text compliment_2">
-                    <a href="">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                    dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    </a>
-                  </span>
-                  <div class="meta-info-post">
-                    <a href="#"><img class="avatar_4" src="Images_2/pic11.jpg" width="40" height="40"></a>
-                    <div class="author-info">
-                      <h4><a href="#">Kupa</a></h4>
-                      <small><a href="#">28th May,2022</a></small>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <h1><?= $featured['title'] ?></h1>
+            <span class="text">
+              <a href="<? ROOT_URL ?>post.php?id=<?= $featured['id'] ?>">
+                <?= substr($featured['body'], 0, 200) ?>...
+              </a>
+            </span>
+            <div class="meta-info-post">
+              <?php
 
-              <!--============POST 2==============-->
-              <div class="gallery">
-                <a target="_blank" href="Images_2/pic12.jpg">
-                  <img class="posting" src="Images_2/pic12.jpg" alt="Cinque Terre" width="600" height="400">
-                </a>
-                <section class="category"><h3>Education</h3></section>
-                <div class="desc">
-                  <h3>Data Analysis</h3>
-                  <span class="text compliment_2">
-                    <a href="">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                    dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    </a>
-                  </span>
-                  <div class="meta-info-post">
-                    <a href="#"><img class="avatar_4" src="Images_2/pic13.jpg" width="40" height="40"></a>
-                    <div class="author-info">
-                      <h4><a href="#">Obeng</a></h4>
-                      <small><a href="#">28th May,2022</a></small>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              $author_id = $featured['author_id'];
+              $author_query = "SELECT * FROM users WHERE id=$author_id";
+              $author_result = mysqli_query($connection, $author_query);
 
-              <!--============POST 3==============-->
-              <div class="gallery">
-                <a target="_blank" href="Images_2/pic13.jpg">
-                  <img class="posting" src="Images_2/pic13.jpg" alt="Cinque Terre" width="600" height="400">
-                </a>
-                <section class="category"><h3>Gaming</h3></section>
-                <div class="desc">
-                  <h3>Machine Learning</h3>
-                    <span class="text compliment_2">
-                      <a href="">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                      dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                      </a>
-                    </span>
-                    <div class="meta-info-post">
-                      <a href="#"><img class="avatar_4" src="Images_2/pic12.jpg" width="40" height="40"></a>
-                      <div class="author-info">
-                        <h4><a href="#">Christabel</a></h4>
-                        <small><a href="#">28th May,2022</a></small>
-                      </div>
-                    </div>
-                </div>
-              </div>
-              <div class="gallery">
-                <a target="_blank" href="Images_2/pic11.jpg">
-                  <img class="posting" src="Images_2/pic11.jpg" alt="Cinque Terre" width="600" height="400">
-                </a>
-                <section class="category"><h3>Tech</h3></section>
-                <div class="desc">
-                  <h3>Data Science</h3>
-                  <span class="text compliment_2">
-                    <a href="">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                    dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    </a>
-                  </span>
-                  <div class="meta-info-post">
-                    <a href="#"><img class="avatar_4" src="Images_2/pic12.jpg" width="40" height="40"></a>
-                    <div class="author-info">
-                      <h4><a href="#">By: Kennedy</a></h4>
-                      <small><a href="#">28th May,2022</a></small>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              $author = mysqli_fetch_assoc($author_result);
 
-              <!--============POST 2==============-->
-              <div class="gallery">
-                <a target="_blank" href="Images_2/pic15.jpg">
-                  <img class="posting" src="Images_2/pic12.jpg" alt="Cinque Terre" width="600" height="400">
-                </a>
-                <section class="category"><h3>Education</h3></section>
-                <div class="desc">
-                  <h3>Data Analysis</h3>
-                  <span class="text compliment_2">
-                    <a href="">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                    dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    </a>
-                  </span>
-                  <div class="meta-info-post">
-                    <a href="#"><img class="avatar_4" src="Images_2/pic7.jpg" width="40" height="40"></a>
-                    <div class="author-info">
-                      <h4><a href="#">By: Isacc</a></h4>
-                      <small><a href="#">30th June,2024</a></small>
-                    </div>
-                  </div>
-                </div>
+              ?>
+              <img class="avatar_4" src="Images/<?= $author['avatar'] ?>" width="40" height="40">
+              <div class="author-info">
+                <h4><a href="#">By: <?= $author['username'] ?></a></h4>
+                <small><?= date("M d, Y \\a\\t H:i a", strtotime($featured['date_time'])) ?></small>
               </div>
+            </div>
+          </section>
+          </div>
+        </section>
+      </article>
+    <?php endif ?>
+    <!--================================================POST=================================================-->
+    <section class="main-post">
+      <h2>
+        POSTS
+      </h2>
+      <section class="post-grid">
+        <?php while ($post = mysqli_fetch_assoc($posts)) : ?>
+          <div class="gallery">
 
-              <!--============POST 3==============-->
-              <div class="gallery">
-                <a target="_blank" href="Images_2/pic13.jpg">
-                  <img class="posting" src="Images_2/pic14.jpg" alt="Cinque Terre" width="600" height="400">
-                </a>
-                <section class="category"><h3>Gaming</h3></section>
-                <div class="desc">
-                  <h3>Machine Learning</h3>
-                    <span class="text compliment_2">
-                      <a href="">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                      dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                      </a>
-                    </span>
-                    <div class="meta-info-post">
-                      <a href="#"><img class="avatar_4" src="Images_2/pic8.jpg" width="40" height="40"></a>
-                      <div class="author-info">
-                        <h4><a href="#">By: Isacc</a></h4>
-                        <small><a href="#">4th June,2023</a></small>
-                      </div>
-                    </div>
-                </div>
-              </div>
-              <div class="gallery">
-                  <a target="_blank" href="Images_2/pic13.jpg">
-                    <img class="posting" src="Images_2/pic14.jpg" alt="Cinque Terre" width="600" height="400">
-                  </a>
-                  <section class="category"><h3>Gaming</h3></section>
-                  <div class="desc">
-                    <h3>Machine Learning</h3>
-                      <span class="text compliment_2">
-                        <a href="">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                        dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                        </a>
-                      </span>
-                      <div class="meta-info-post">
-                        <a href="#"><img class="avatar_4" src="Images_2/pic8.jpg" width="40" height="40"></a>
-                        <div class="author-info">
-                          <h4><a href="#">By: Isacc</a></h4>
-                        <small><a href="#">29th June,2023</a></small>
-                        </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="gallery">
-                    <a target="_blank" href="Images_2/pic13.jpg">
-                      <img class="posting" src="Images_2/pic14.jpg" alt="Cinque Terre" width="600" height="400">
-                    </a>
-                    <section class="category"><h3>Gaming</h3></section>
-                    <div class="desc">
-                      <h3>Machine Learning</h3>
-                        <span class="text compliment_2">
-                          <a href="">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                          dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                          </a>
-                        </span>
-                        <div class="meta-info-post">
-                          <a href="#"><img class="avatar_4" src="Images_2/pic8.jpg" width="40" height="40"></a>
-                          <div class="author-info">
-                            <h4><a href="#">By: Odame</a></h4>
-                            <small><a href="#">29th June,2023</a></small>
-                          </div>
-                        </div>
-                    </div>
-              </div>
-              <div class="gallery">
-                <a target="_blank" href="Images_2/pic13.jpg">
-                  <img class="posting" src="Images_2/pic13.jpg" alt="Cinque Terre" width="600" height="400">
-                </a>
-                <section class="category"><h3>Gaming</h3></section>
-                <div class="desc">
-                  <h3>Machine Learning</h3>
-                    <span class="text compliment_2">
-                      <a href="">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                      dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                      </a>
-                    </span>
-                    <div class="meta-info-post">
-                      <a href="#"><img class="avatar_4" src="Images_2/pic12.jpg" width="40" height="40"></a>
-                      <div class="author-info">
-                        <h4><a href="#">By: Christabel</a></h4>
-                        <small><a href="#">29th June,2023</a></small>
-                      </div>
-                    </div>
-                </div>
-              </div>
-              </div>
+            <img class="posting" src="Images\<?= $post['thumbnail'] ?>" alt="Cinque Terre" width="600" height="400">
+            <section class="category">
+              <?php
+              // fetch categorise from categories
+              $category_id = $post['category_id'];
+              $category_query = "SELECT * FROM categories WHERE id=$category_id";
+              $category_result = mysqli_query($connection, $category_query);
+              $post_category = mysqli_fetch_assoc($category_result);
+              ?>
+              <h3><?= $post_category['title'] ?></h3>
             </section>
-          </section>     
-    </main>
-    <aside>
-      <div class="middle-element container">
-        <section class="cat"><h3>Education</h3></section>
-        <section class="cat"><h3>Arts</h3></section>
-        <section class="cat"><h3>Gaming</h3></section>
-        <section class="cat"><h3>Science</h3></section>
-        <section class="cat"><h3>Software</h3></section>
-        <section class="cat"><h3>UI design</h3></section>
-        <section class="cat"><h3>UX design</h3></section>
-        <section class="cat"><h3>Data Science</h3></section>
-        <section class="cat"><h3>Coding</h3></section>
-      </div>
-    </aside> 
+            <div class="desc">
+              <h3><a href="<?=ROOT_URL ?>post.php?id=<?= $post['id'] ?>"><?= $post['title'] ?></a></h3>
+              <span class="text compliment_2">
+                <a href="<?= ROOT_URL ?>post.php?id=<?= $post['id'] ?>">
+                  <?= substr($post['body'], 0, 300) ?>...
+                </a>
+              </span>
+              <div class="meta-info-post">
+                <?php
+
+                $author_id = $post['author_id'];
+                $author_query = "SELECT * FROM users WHERE id=$author_id";
+                $author_result = mysqli_query($connection, $author_query);
+
+                $author = mysqli_fetch_assoc($author_result);
+
+                ?>
+                <a href="#"><img class="avatar_4" src="Images/<?= $author['avatar']?>" width="40" height="40"></a>
+                <div class="author-info">
+                  <h4><a href="#">By: <?= $author['username'] ?></a></h4>
+                  <small><?= date("M d, Y \\a\\t H:i a", strtotime($post['date_time'])) ?></small>
+                </div>
+              </div>
+            </div>
+          </div>
+        <?php endwhile ?>
+        <!--===================POST 1==============================-->
+      </section>
+  </main>
+  <aside>
+    <div class="middle-element container">
+      <?php
+      $all_categories = "SELECT * FROM categories";
+      $cat_result = mysqli_query($connection, $all_categories);
+
+      ?>
+      <?php while ($cat = mysqli_fetch_assoc($cat_result)): ?>
+      <section class="cat">
+        <h3><a href="<?= ROOT_URL?>category-posts.php?id=<?= $cat['id']?>"><?=$cat['title'] ?></a></h3>
+      </section>
+      <?php endwhile?>
+    </div>
+  </aside>
 
 
-    <!--===============================FOOTER================================-->
-    <?php
-    include 'Partials/Footer.php';
-    ?>
+  <!--===============================FOOTER================================-->
+  <?php
+  include 'Partials/Footer.php';
+  ?>
 </body>
-    <!--Script-->
-    <script src="Style and Scripts\Main.js"></script>
+<!--Script-->
+<script src="Style and Scripts\Main.js"></script>
+
 </html>
 

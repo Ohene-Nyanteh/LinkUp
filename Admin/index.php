@@ -27,7 +27,7 @@ $posts = mysqli_query($connection, $query);
                 <?= $_SESSION['add-post'];
                 unset($_SESSION['add-post']); ?>
             </div>
-            
+
 
         <?php elseif (isset($_SESSION['edit-post-sucess'])) : // shows edit user was sucessful
         ?>
@@ -35,7 +35,13 @@ $posts = mysqli_query($connection, $query);
                 <?= $_SESSION['edit-post-sucess'];
                 unset($_SESSION['edit-post-sucess']); ?>
             </div>
-        <?php elseif (isset($_SESSION['delete-post-sucess'])) : // shows edit user was sucessful
+        <?php elseif (isset($_SESSION['edit-post'])) : // shows edit user was sucessful
+        ?>
+            <div class="alert__message error container">
+                <?= $_SESSION['edit-post'];
+                unset($_SESSION['edit-post']); ?>
+            </div>
+        <?php elseif (isset($_SESSION['delete-post-sucess'])) : // shows delete user was sucessful
         ?>
             <div class="alert__message sucess container">
                 <?= $_SESSION['delete-post-sucess'];
